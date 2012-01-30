@@ -1,0 +1,115 @@
+/*!
+ * Abril Bootstrap v0.1.0
+ *
+ * Copyright 2012 Editora Abril
+ * Designed and built by @luiscameroon
+ * Date: 17-01-2012
+ */
+/* CSS Resets */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative;margin:0}figure img{ width: 100% }
+img, object, embed { max-width: 100%; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ul, ol { list-style: none; list-style-image: none; }
+mark { background: #ff0; color: #000; }
+svg:not(:root) { overflow: hidden; }
+audio:not([controls]) { display: none; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+::-moz-selection { background: #360; color: #fff; text-shadow: none; }
+::selection { background: #360; color: #fff; text-shadow: none; }
+/* Links */
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+/* Forms */
+label { cursor: pointer; }
+button, input { line-height: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+/* HTML and Body */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { background-color: #FFF; font-family: sans-serif; font-size: 1em; color: #444; line-height: 1.3em; -webkit-text-size-adjust: none; }
+/* Clearfix */
+.clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* Image Replace */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hide, .hidden { display: none !important; visibility: hidden; }
+.show { display: block; }
+/* Grid System */
+.row { width: 960px; margin: 0 auto; clear: left; -webkit-transition: all .2s ease; -moz-transition: all .2s ease; -o-transition: all .2s ease; transition: all .2s ease; }
+.row .col-main { width: 640px; float: left;  }
+.row .col-side, .row .col-out-side { width: 320px; float: right; }
+.first, .alpha { margin-left: 0 !important; }
+.last, .omega { margin-right: 0 !important; }
+/* Grid >> Global */
+.col1, .col2, .col3, .col4, .col5, .col6, .one-third { display: inline; float: left; position: relative; margin-left: 10px; margin-right: 10px; -webkit-transition: all .2s ease; -moz-transition: all .2s ease; -o-transition: all .2s ease; transition: all .2s ease; }
+/* Grid Full >> 6 Columns */
+.row .col1 { width: 140px; }
+.row .col2 { width: 300px; }
+.row .col3 { width: 460px; }
+.row .col4 { width: 620px; }
+.row .col5 { width: 780px; }
+.row .col6 { width: 940px; }
+/* Grid Main >> 4 Columns */
+.col-main .col1 { width: 140px; }
+.col-main .col2 { width: 300px; }
+.col-main .one-third { width: 193px; }
+.col-main .col3 { width: 460px; }
+.col-main .col4 { width: 620px; }
+/* Grid Side >> 2 Columns */
+.col-side .col1, .col-out-side .col1 { width: 140px; }
+.col-side .col2, .col-out-side .col2 { width: 300px; }
+
+/* ============================= */
+/* ! Layout for Tablet version   */
+/* ============================= */
+@media only screen and (max-width: 1023px) {
+  .row, .row .col-main { width: 640px; }
+  .row .col1, .row .col2, .col-main .one-third { width: 193px; }
+  .row .col4, .row .col5 { width: 407px; }
+  .row .col-main .col3 { width: 460px; }
+  .row .col6, .col-main .col4 { width: 620px; }
+  .row .col-side { float: left; }
+  .row .col-out-side { width: 320px; float: right; }
+  .col-side .col1, .row .col-main .col1, .col-out-side .col1 { width: 140px; }
+  .row .col3, .row .col-main .col2, .col-side .col2, .col-out-side .col2 { width: 300px; }
+}
+/* ============================= */
+/* ! Layout for Mobile version   */
+/* ============================= */
+@media handheld, only screen and (max-width: 767px) {
+  .row, .row .col-main, .row .col-side, .row .col-out-side { width: 320px; }
+  .row .col1, .row .col2, .row .col3, .row .col4, .row .col5, .row .col6,
+  .row .col-main .col1, .row .col-main .col2, .row .col-main .col3,
+  .row .col-main .one-third, .row .col-side .col1, .row .col-side .col2,
+  .row .col-out-side .col1, .row .col-out-side .col2 { width: 300px; }
+}
+/* ============================= */
+/* ! Layout for print            */
+/* ============================= */
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

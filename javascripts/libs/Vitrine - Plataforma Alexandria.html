@@ -1,0 +1,386 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Vitrine - Plataforma Alexandria</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://www.abril.com.br/favicon.ico">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body { padding-top: 60px; }
+    </style>
+    
+
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Vitrine Alexandria</a>
+          <ul class="nav">
+    <li ><a href="/">Home</a></li>
+    <li ><a href="/webmaster">Webmaster</a></li>
+    <li ><a href="/desenvolvedor">Desenvolvedor</a></li>
+    <li ><a href="/editor">Editor</a></li>
+    <li ><a href="/noticias">Notícias</a></li>
+    <li ><a href="/faq">FAQ</a></li>
+    <li class='active'><a href="/api-explorer">APIs Explorer</a></li>
+</ul>
+          <p class="pull-right">Contato: <a href="mailto:alexandria@abril.com.br">Alexandria@abril.com.br</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://bowser.effectgames.com/~jhuckaby/zeroclipboard/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/einars/js-beautify/master/beautify.js"></script>
+    
+    <script type="text/javascript"> 
+      $(function(){
+        // Ajuste no container
+        $('.container').addClass('container-fluid').removeClass('container');
+        // Form vars
+        $("#form input[type='text']:first").focus();
+          var qry = ""
+          $("#form :input").blur(function(){
+          qry = $("#form :input[value]").serialize()
+          $("#query").val(qry);
+        });
+        // On change Dominio
+        $("#select-dom").change(function () {
+          $("#d").val( $("#select-dom option:selected").text() )
+          $.getJSON('/api-explorer/ajax?url='+ $(this).val() , function(data) {
+            var items = [];
+            $.each(data.link, function(key, entry) {
+              if (entry.rel !="version" && entry.rel !="self" && entry.rel !="entry_point" && entry.rel !="fontes" && entry.rel !="categorias" && entry.rel !="marcas" ) {
+               items.push('<option value="?d='+ $("#select-dom option:selected").text() +'&r='+ entry.rel +'">'+ entry.rel +'</option>'); 
+              }
+            });
+            $('#select-rec').html(items.join(''));
+            $("#r").val( $('#select-rec option:first').text() )
+            
+            window.location = "/api-explorer"+ $('#select-rec option:first').val()
+            
+          });
+          
+        });
+        // On change Recurso
+        
+        // Show result beautify
+        if($("#jsn").val().trim()){
+          var jsn = $("#jsn").val();
+          var out = js_beautify(jsn, {'indent_size': 2, 'brace_style' : 'expand'} );
+          $('#result').html(out);
+        }
+      });
+    </script>
+     
+     <div class="page-header">
+       <h1>APIs Explorer <small><a href="/render-test"> Render Test </a></small> </h1>
+     </div>
+     
+     <div class="sidebar" style="width: 480px;">
+       <div class="row">
+         <div class="span7" style=" padding: 10px 30px; background: #F5F5F5; border-bottom: 1px solid #ddd">
+           <strong style="font-size: 18px">Domínio:</strong>
+           <select id="select-dom" name="d" class="span5">
+             <option  value="http://anotacoes.api.abril.com.br/anotacoes">anotacoes</option>
+             <option  value="http://concursos.api.abril.com.br/entry_point">concursos</option>
+             <option selected value="http://editorial.api.abril.com.br/entry_point">editorial</option>
+             <option  value="http://estabelecimentos.api.abril.com.br/estabelecimentos">estabelecimentos</option>
+             <option  value="http://midia.api.abril.com.br/entry_point">midia</option>
+             <option  value="http://receitas.api.abril.com.br/receitas">receitas</option>
+           </select>
+         </div>
+       </div>
+       <div class="row">
+          <div class="span7" style="padding: 10px 30px; background: #F5F5F5; border-bottom: 1px solid #ddd">
+            <strong style="font-size: 18px">Recurso:</strong>
+            <select id="select-rec" name="r" class="span5">
+                <option selected value="?d=editorial&amp;r=materias">materias</option>
+                <option  value="?d=editorial&amp;r=listas_editoriais">listas_editoriais</option>
+                <option  value="?d=editorial&amp;r=galerias_multimidia">galerias_multimidia</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span8" id="materias">
+            <form id="form" style="overflow:auto; margin-bottom:0; height: 320px;" class="clearfix">
+              <fieldset>
+                <legend class="hide">Formulário</legend>
+                <div class="clearfix">
+                  <label class="span3" for="tags">tags= &nbsp;</label>
+                  <input class="span4" id="tags" name="tags" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="slug">slug= &nbsp;</label>
+                  <input class="span4" id="slug" name="slug" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="rotulos_controlados">rotulos_controlados= &nbsp;</label>
+                  <input class="span4" id="rotulos_controlados" name="rotulos_controlados" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="q">q= &nbsp;</label>
+                  <input class="span4" id="q" name="q" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="pw">pw= &nbsp;</label>
+                  <input class="span4" id="pw" name="pw" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="per_page">per_page= &nbsp;</label>
+                  <input class="span4" id="per_page" name="per_page" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="order">order= &nbsp;</label>
+                  <input class="span4" id="order" name="order" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="marca">marca= &nbsp;</label>
+                  <select class="span4" id="marca" name="marca">
+                    <option value="">Selecione uma opção</option>
+marcas                    <option>4RODAS</option>
+                    <option>ABRIL.COM</option>
+                    <option>Abril Videos</option>
+                    <option>Alexandria</option>
+                    <option>AlmanaqueAbril</option>
+                    <option>BRAVO!</option>
+                    <option>Bebê</option>
+                    <option>Casa</option>
+                    <option>Claudia</option>
+                    <option>Elle</option>
+                    <option>Estilo</option>
+                    <option>Exame</option>
+                    <option>GLOSS</option>
+                    <option>Habla</option>
+                    <option>Manequim</option>
+                    <option>MdeMulher</option>
+                    <option>ModaSpot</option>
+                    <option>Mundo Estranho</option>
+                    <option>RECREIO</option>
+                    <option>Veja</option>
+                    <option>VejaSP</option>
+                    <option>national-geographic</option>
+                    <option>oi</option>
+                    <option>viajeaqui</option>
+                  </select>
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="fonte">fonte= &nbsp;</label>
+                  <select class="span4" id="fonte" name="fonte">
+                    <option value="">Selecione uma opção</option>
+fontes                    <option>ALFA</option>
+                    <option>ALMANAQUE ABRIL</option>
+                    <option>ALMANAQUE ABRIL (CD-Rom)</option>
+                    <option>ALMANAQUE ABRIL (Impresso)</option>
+                    <option>ALMANAQUE ABRIL (Site)</option>
+                    <option>ANAMARIA</option>
+                    <option>ARQUITETURA &amp; CONSTRUÇÃO</option>
+                    <option>ARQUITETURA E CONSTRUÇÃO</option>
+                    <option>ATUALIDADES 1º SEMESTRE</option>
+                    <option>ATUALIDADES 2º SEMESTRE</option>
+                    <option>AVENTURAS NA HISTÓRIA</option>
+                    <option>Abril</option>
+                    <option>Abril e Ibope</option>
+                    <option>Abril.com</option>
+                    <option>Agência Estado</option>
+                    <option>Alexandria</option>
+                    <option>Arquivo Pessoal</option>
+                    <option>BOA FORMA</option>
+                    <option>BONS FLUIDOS</option>
+                    <option>BRAVO!</option>
+                    <option>Bebe.com.br</option>
+                    <option>CAPRICHO</option>
+                    <option>CARAS</option>
+                    <option>CASA CLAUDIA</option>
+                    <option>CASA CLAUDIA BEBÊ</option>
+                    <option>CASA CLAUDIA LUXO</option>
+                    <option>CASA IMOVEIS</option>
+                    <option>CASA IMÓVEIS</option>
+                    <option>CLAUDIA</option>
+                    <option>CLAUDIA BEBÊ</option>
+                    <option>CLAUDIA NOIVAS</option>
+                    <option>CONTIGO!</option>
+                    <option>CONTIGO! Online</option>
+                    <option>Casa.com.br</option>
+                    <option>DELÍCIAS DA CALU</option>
+                    <option>DINO ROCK</option>
+                    <option>Disney</option>
+                    <option>Divulgação</option>
+                    <option>ELLE</option>
+                    <option>ESTILO</option>
+                    <option>EXAME</option>
+                    <option>EXAME PME</option>
+                    <option>Fundação Victor Civita</option>
+                    <option>GLOSS</option>
+                    <option>GUIA DO ESTUDANTE</option>
+                    <option>GUIA EXAME DE SUSTENTABILIDADE</option>
+                    <option>GUIA QUATRO RODAS</option>
+                    <option>GUIA QUATRO RODAS ONLINE</option>
+                    <option>Getty Images</option>
+                    <option>HERÓIS DA TV</option>
+                    <option>INFO</option>
+                    <option>INFO ONLINE</option>
+                    <option>LOLA</option>
+                    <option>LOVETEEN</option>
+                    <option>MAIS FELIZ</option>
+                    <option>MANEQUIM</option>
+                    <option>MANEQUIM NOIVA</option>
+                    <option>MEN'S HEALTH</option>
+                    <option>MINHA CASA</option>
+                    <option>MINHA NOVELA</option>
+                    <option>MODASPOT</option>
+                    <option>MUNDO ESTRANHO</option>
+                    <option>MdeMULHER</option>
+                    <option>Movimento Habla</option>
+                    <option>MÁXIMA</option>
+                    <option>NATIONAL GEOGRAPHIC BRASIL</option>
+                    <option>NATIONAL GEOGRAPHIC BRASIL ONLINE</option>
+                    <option>NOVA</option>
+                    <option>NOVA ESCOLA</option>
+                    <option>PATO DONALD</option>
+                    <option>PLACAR</option>
+                    <option>PLAYBOY</option>
+                    <option>QUATRO RODAS</option>
+                    <option>RECREIO</option>
+                    <option>REVISTA A</option>
+                    <option>RUNNER'S WORLD</option>
+                    <option>Redação Elle</option>
+                    <option>SAÚDE!</option>
+                    <option>SOU MAIS EU!</option>
+                    <option>SUPERINTERESSANTE</option>
+                    <option>SuperSurf</option>
+                    <option>TITITI</option>
+                    <option>Thinkstock</option>
+                    <option>VEJA</option>
+                    <option>VEJA RIO</option>
+                    <option>VEJA SÃO PAULO</option>
+                    <option>VEJA.COM</option>
+                    <option>VIAGEM E TURISMO</option>
+                    <option>VIAGEM E TURISMO ONLINE</option>
+                    <option>VIDA SIMPLES</option>
+                    <option>VIVA!</option>
+                    <option>VOCÊ RH</option>
+                    <option>VOCÊ S/A</option>
+                    <option>Veja São Paulo Revista (Redação)</option>
+                    <option>WOMEN'S HEALTH</option>
+                    <option>viajeaqui</option>
+                  </select>
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="editorias">editorias= &nbsp;</label>
+                  <input class="span4" id="editorias" name="editorias" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="data_ultima_atualizacao_inicio">data_ultima_atualizacao_inicio= &nbsp;</label>
+                  <input class="span4" id="data_ultima_atualizacao_inicio" name="data_ultima_atualizacao_inicio" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="data_ultima_atualizacao_fim">data_ultima_atualizacao_fim= &nbsp;</label>
+                  <input class="span4" id="data_ultima_atualizacao_fim" name="data_ultima_atualizacao_fim" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="customizada">customizada= &nbsp;</label>
+                  <input class="span4" id="customizada" name="customizada" type="text" />
+                </div><!-- /clearfix -->
+                <div class="clearfix">
+                  <label class="span3" for="categorias">categorias= &nbsp;</label>
+                  <select class="span4" id="categorias" name="categorias">
+                    <option value="">Selecione uma opção</option>
+categorias                    <option>Arquitetura, Casa e Decoração</option>
+                    <option>Arte, Cultura e Entretenimento</option>
+                    <option>Ciência e Tecnologia</option>
+                    <option>Comportamento</option>
+                    <option>Culinária e Gastronomia</option>
+                    <option>Economia e Transporte</option>
+                    <option>Educação</option>
+                    <option>Esporte</option>
+                    <option>Medicina e Saúde</option>
+                    <option>Meio Ambiente</option>
+                    <option>Moda e Beleza</option>
+                    <option>Personalidade</option>
+                    <option>Política e Justiça</option>
+                    <option>Serviço e Roteiro</option>
+                    <option>Turismo e Lazer</option>
+                  </select>
+                </div><!-- /clearfix -->
+              </fieldset>
+            </form><!-- .form -->
+            <form id="form-api-explorer" action="/api-explorer" class="row" method="get">
+              <div class="span7" style="padding: 15px 30px; background: #F5F5F5; border-top: 1px solid #ddd">
+                <span>
+                  <select id="base_url" name="base_url" class="span3">
+                    <option>materias/busca?</option>
+                    <option >materias/id/</option>
+                    <option >materias/</option>
+                  </select>
+                </span>
+                <input class="xlarge span4" id="query" name="query" type="text" style="text-align: left;" value="" />
+                <input type="submit" class="btn primary" value="EXPLORAR" style="float: right; margin: 10px 26px 0 0" />
+                <input type="button" id="copy" class="btn success" style="display: none" value="COPIAR" />
+                <input type="hidden" name="d" id="d" value="editorial" />
+                <input type="hidden" name="r" id="r" value="materias" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content" style="margin-left: 480px; min-height: 495px">
+        <div class="page-header">
+          <h2>Resultado <small></small></h2>
+        </div>
+<textarea class="hide" id="jsn">
+</textarea>
+<pre id="result">
+  {
+      "resultado": "aqui"
+  }
+</pre>
+
+      </div><!-- .content -->
+
+
+      
+      <footer>
+        <p>Copyright © 2011 - Plataforma Alexandria</p>
+      </footer>
+      
+    </div> <!-- /container -->
+    
+    <!-- javascripts -->
+    <script src="http://code.jquery.com/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="http://github.com/rails/jquery-ujs/raw/master/src/rails.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       SyntaxHighlighter.all()
+    </script>
+    
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27206259-1']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+</body>
+</html>
+
