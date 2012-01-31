@@ -49,14 +49,6 @@ O Abril Bootstrap inclui uma completa estrutura HTML5, CSS3 e Media Queries para
 * Três exemplos diferentes de base.css (960px, 990px, 1280px)
 
 
-Mailing list
-------------
-
-Perguntas ou Dúvidas? Mande um email para nossa lista!
-
-ALX-Webmasters@abril.com.br
-
-
 Author
 -------
 
