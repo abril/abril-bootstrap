@@ -3,7 +3,7 @@ ABRIL BOOTSTRAP
 
 O Bootstrap é uma ferramenta da Editora Abril projetado para um início rápido no desenvolvimento de sites.
 
-Demo: http://abril.github.com/Abril-Bootstrap
+Demo: http://abril.github.com/abril-bootstrap/
 
 
 Como usar
