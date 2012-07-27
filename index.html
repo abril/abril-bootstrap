@@ -1,320 +1,778 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="pt-br"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="pt-br"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="pt-br"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="pt-br"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="pt-br"><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. -->
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="pt-br"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="pt-br"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="pt-br"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="pt-br"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title></title>
-  <meta name="description" content="">
+
+  <title>Abril Bootstrap - Documentação</title>
   <meta name="keywords" content="">
-  <!-- Facebook Open Graph Data -->
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
+  <meta name="description" content="">
   
-  <meta name="robots" content="all" />
   <meta name="author" content="Editora Abril">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="google-site-verification" content="" />
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Facebook Open Graph Data -->
+  <meta property="og:title"  content="">
+  <meta property="og:description" content="">
+  <meta property="og:site_name"   content="">
+  <meta property="og:image"  content="">
+  <meta property="og:url"    content="">
+  <meta property="og:type"   content="">
+  <meta property="fb:admins" content="">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png">
+  <link rel="icon" type="image/x-icon"     href="images/favicon.ico">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/base.960.css" />
-  <style type="text/css">
-    /* Style for this Demo */
-    body { font-size: 14px }
-    div { margin-bottom: 10px }
-    h1, h2, h3 { margin: 10px 0 }
-    h1 { font-size: 1.9em }
-    h2 { font-size: 1.5em }
-    h3 { font-size: 1.3em }
-    p { padding-bottom: 10px; }
-    ul, ol { margin: 0 0 18px 20px; list-style: disc; }
-    li { line-height: 1.4em; }
-    header { background: #030; margin-bottom: 30px; color: #FFF }
-    header h1 { font-size: 2.3em; }
-    header .row { background: transparent url(http://twitter.github.com/bootstrap/assets/img/grid-18px.png) top center; padding: 40px 0 25px 0px; }
-    #resize { position: fixed; right: 0px; bottom: 0px; }
-    /* Grid System */
-    .gridsystem { background-color:#eee; }
-    .gridsystem .col-main { background-color:#ccc; margin-bottom: 10px; }
-    .gridsystem .col-side { background-color:#999; margin-bottom: 10px; }
-    .gridsystem div { background-color: #fff; }
-    .gridsystem div p { border:1px solid #333; padding: 10px; }
-  </style>
-  
-  <!-- Le fav and touch icons -->
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
-  <link rel="dns-prefetch" href="//abrilm.com.br">
-  <link rel="dns-prefetch" href="//assineabril.com.br">
-  <link rel="canonical" href="index.html" />
-  
-  <!-- All JavaScript at the bottom, except this Modernizr.js -->
-  <script src="javascripts/libs/modernizr-2.0.6.min.js"></script>
-  <!-- Enable HTML5/CSS3 in IE7+8 --> 
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="stylesheets/abril-bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+
+  <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
-    <script src="https://raw.github.com/keithclark/selectivizr/master/selectivizr.js"></script>
-    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
-</head>
-
-<body>
-  <header>
-    <div class="row">
-      <h1>Abril Bootstrap</h1>
-      <p>O Bootstrap é uma ferramenta da Editora Abril projetado para um início rápido no desenvolvimento de sites.</p>
-    </div>
-  </header>
-  
-  <div id="container" role="main">
-    
-    <div class="row">
-      <h1>Sobre o Bootstrap</h1>
-      <hr />
-        <div class="col2">
-          <h3>História</h3>
-          <p>Os Desenvolvedores Front-end da Editora Abril historicamente tem usado quase qualquer estrutura/biblioteca que eles estavam familiarizados para atender requisitos de interface.</p>
-          <p>O Abril Bootstrap tem como desafio padronizar esta estrutura/bibliotecas para atender os requisitos de um <a href="https://confluence.abril.com.br/x/swFr">Responsive Website</a> e <a href="https://confluence.abril.com.br/x/5wEt">Performance</a>.</p>
-        </div>
-        <div class="col2">
-          <h3>Browsers suportados</h3>
-          <p>Abril Bootstrap é testado e suportado nos principais navegadores modernos.</p>
-          <p><img src="http://twitter.github.com/bootstrap/assets/img/browsers.png" alt="Tested and supported in Chrome, Safari, Internet Explorer, and Firefox"></p>
-          <ul>
-            <li>Google Chrome 4+</li>
-            <li>Safari 3+</li>
-            <li>Firefox 4+</li>
-            <li>Internet Explorer 7+</li>
-            <li>Opera 11+</li>
-          </ul>
-        </div>
-        <div class="col2">
-          <h3>O que está incluso</h3>
-          <p>O Abril Bootstrap inclui uma completa estrutura HTML5, CSS3 e Media Queries para Tablets e Celulares.</p>
-          <ul>
-            <li>jQuery JavaScript Library</li>
-            <li>Plugins Javascript (modernizr, selectivizr, css3-mediaqueries)</li>
-            <li>Documentação de estilo completa</li>
-            <li>Três exemplos diferentes de base.css (960px, 990px, 1280px)</li>
-          </ul>
-        </div>
-      </div>
-      
-    <div class="row clearfix">
-      <h1>Grid system</h1>
-      <hr />
-      <p>O sistema de grade padrão fornecido pelo Abril Bootstrap é uma 960px 6 colunas de largura. É um dos tamanhos mais populares nos dias de hoje, com margens laterais de 10px nas colunas.</p>
-    </div>
-    
-    <section class="gridsystem row clearfix">
-      
-      <h2 class="col6">
-        6 Column - Row
-      </h2>
-      
-      <div class="col6">
-        <p> .col6 </p>
-      </div>
-      
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      <div class="col5">
-        <p>.col5</p>
-      </div>
-      
-      <div class="col2">
-        <p>.col2</p>
-      </div>
-      <div class="col4">
-        <p>.col4</p>
-      </div>
-      
-      <div class="col3">
-        <p>.col3</p>
-      </div>
-      
-      <div class="col3">
-        <p>.col3</p>
-      </div>
-      
-      <div class="col2">
-        <p>.col2</p>
-      </div>
-      <div class="col2">
-        <p>.col2</p>
-      </div>
-      <div class="col2">
-        <p>.col2</p>
-      </div>
-      
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      <div class="col1">
-        <p>.col1</p>
-      </div>
-      
-      <section class="col-main">
-        
-        <h2 class="col4">
-          4 Column - Col Main
-        </h2>
-        
-        <div class="col4">
-          <p>.col4</p>
-        </div>
-        
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        <div class="col3">
-          <p>.col3</p>
-        </div>
-        
-        <div class="col2">
-          <p>.col2</p>
-        </div>
-        <div class="col2">
-          <p>.col2</p>
-        </div>
-        
-        <div class="one-third">
-          <p>.one-third</p>
-        </div>
-        <div class="one-third">
-          <p>.one-third</p>
-        </div>
-        <div class="one-third">
-          <p>.one-third</p>
-        </div>
-        
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        
-      </section>
-      
-      <aside class="col-side">
-        
-        <h2 class="col2 clearfix">
-          2 Column - Col Side
-        </h2>
-        
-        <div class="col2">
-          <p>.col2</p>
-        </div>
-        
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        
-      </aside>
-      
-      <aside class="col-side">
-        
-        <h2 class="col2 clearfix">
-          2 Column - Col Side
-        </h2>
-        
-        <div class="col2">
-          <p>.col2</p>
-        </div>
-        
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        
-        <div class="col1">
-          <p>.col1</p>
-        </div>
-        
-      </aside>
-      
-    </section>
-    
-  </div><!-- #container -->
-  
-  <footer>
-    <img src="http://cssgrid.net/img/resize.png" alt="Resize me!" id="resize">
-  </footer>
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="javascripts/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script defer src="javascripts/libs/plugins.min.js"></script>
-  <script defer src="javascripts/home.min.js"></script>
-  <!-- end scripts -->
-
-  <!-- Google Analytics -->
-  <script type="text/javascript"> 
-    //Config metrics
-    var _cmAbr = _cmAbr || [];
-    _cmAbr["setPath"] = "/"; //site_path
-  </script>
-  <!-- script src="/libc/metrics/site/cm_abril.js"></script -->
-  
-  <script type="text/javascript">
-    // Script for this Demo
-    $(function(){
-      windowResize();
-      $(window).resize(function() {
-        windowResize();
-      });
-    });
-    windowResize = function(){
-      $('.gridsystem .col1, .gridsystem .col2, .gridsystem .col3, .gridsystem .col4, .gridsystem .col5, .gridsystem .col6, .gridsystem .one-third').each(function(){
-        var width = $(this).width();
-        $(this).find('p').text( $(this).attr('class') + ' : ' + width + 'px');
-      });
-    }
-  </script>
-
-  <!-- Prompt IE 6 users to install Chrome Frame -->
-  <!--[if lt IE 7 ]>
+  <!-- Prompt IE 6/7 users to install Chrome Frame -->
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--[if lte IE 7 ]>
     <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
 
+</head>
+<body>
+
+  <div class="topo-barra">
+    <div class="linha">
+      <div class="quatro colunas">
+          <a class="logo" href="#" title="Abril Bootstrap">Abril Bootstrap</a>
+      </div>
+      <nav class="oito colunas">
+        <ul class="lista-links direita">
+          <li class="show-for-small">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Documentação</a>
+          </li>
+          <li>
+            <a href="http://github.com/abril/Abril-Bootstrap">GitHub</a>
+          </li>
+          <li class="download">
+            <a class="small blue nice button src-download" href="#">Download</a>
+          </li>
+        </ul>
+      <nav>
+    </div>
+  </div>
+
+  <div id="header">
+    <header class="linha">
+      <div class="doze colunas">
+        <h1>Documentação Abril Bootstrap</h1>
+        <h4 class="subtitulo">Ferramenta projetado para um início rápido no desenvolvimento de sites</h4>
+      </div>
+    </header>
+  </div>
+  
+  <section role="main">
+    <div class="linha">
+      <div class="quatro colunas">
+        <h3>História</h3>
+        <p>Os Desenvolvedores Front-end da Editora Abril historicamente tem usado quase qualquer estrutura/biblioteca que eles estavam familiarizados para atender requisitos de interface.</p>
+        <p>O Abril Bootstrap tem como desafio padronizar esta estrutura/bibliotecas para atender os requisitos de um Responsive Website e Performance.</p>
+      </div>
+      <div class="quatro colunas">
+        <h3>Browsers suportados</h3>
+        <p>Abril Bootstrap é testado e suportado nos principais navegadores modernos.</p>
+        <img class="logo-browsers" src="images/browsers.png" alt="Browsers">
+        <ul class="disc">
+          <li>Google Chrome 4+</li>
+          <li>Safari 3+</li>
+          <li>Firefox 4+</li>
+          <li>Internet Explorer 7+</li>
+          <li>Opera 11+</li>
+        </ul>
+      </div>
+      <div class="quatro colunas">
+        <h3>O que está incluso</h3>
+        <ul class="disc">
+          <li>O Abril Bootstrap inclui uma completa estrutura HTML5, CSS3 e Media Queries para Tablets e Celulares.</li>
+          <li>jQuery JavaScript Library</li>
+          <li>Plugins Javascript (modernizr, selectivizr, css3-mediaqueries)</li>
+          <li>Documentação de estilo completa</li>
+          <li>Responsive design (1020px, 730px, 640 fluid)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="doze colunas">
+        <h3>Grid System</h3>
+        <h4 class="subtitulo">Crie poderosos layouts multi-device de 12 Colunas com rapidez e facilidade. </h4>
+        <hr />
+        <h4>Como funciona?</h4>
+        <p>O grid foi construido com dois elementos chave: <code>.linha</code> e <code>.coluna</code>. Para funcionar corretamente, sempre coloque as Colunas dantro de uma Linha.</p>
+        <p>Obs: <strong>Não é necessário fixar uma largura (width) na coluna.</strong></p>
+        
+<pre class="pre">
+&lt;div class="<span class="vermelho">linha</span>"&gt;
+  &lt;div class="<span class="vermelho">oito colunas</span>"&gt;
+    <span class="preto">Conteudo principal...</span>
+  &lt;/div&gt;
+  &lt;div class="<span class="vermelho">quatro colunas</span>"&gt;
+    <span class="preto">Sidebar...</span>
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        <hr />
+
+        <h4>Nesting Suporte</h4>
+        <p>O grid permite que você crie vários níveis uma estrutura (grid) dentro dela. Você pode usar esse "nesting suporte" para criar layouts bem complexos.</p>
+
+<pre class="pre">
+&lt;div class="<span class="vermelho">linha</span>"&gt;
+  &lt;div class="<span class="vermelho">oito colunas</span>"&gt;
+    &lt;div class="<span class="vermelho">linha</span>"&gt;
+      &lt;div class="<span class="vermelho">seis colunas</span>"&gt;
+        <span class="preto">Seis colunas (nested)</span>
+      &lt;/div&gt;
+      &lt;div class="<span class="vermelho">seis colunas</span>"&gt;
+        <span class="preto">Seis colunas (nested)</span>
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="<span class="vermelho">quatro colunas</span>"&gt;
+    <span class="preto">Sidebar...</span>
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+        <hr />
+
+        <h4>Examples</h4>
+
+        <p>Veja abaixo um exemplo visível do grid system. Cada bloco de coluna é dimensionada com base nas 12 colunas.</p>
+
+        <div class="linha display">
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="tres colunas">
+            .tres.colunas
+          </div>
+          <div class="seis colunas">
+            .seis.colunas
+          </div>
+          <div class="tres colunas">
+            .tres.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="duas colunas">
+            .duas.colunas
+          </div>
+          <div class="oito colunas">
+            .oito.colunas
+          </div>
+          <div class="duas colunas">
+            .duas.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="uma colunas">
+            .uma
+          </div>
+          <div class="onze colunas">
+            .onze.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="duas colunas">
+            .duas.colunas
+          </div>
+          <div class="dez colunas">
+            .dez.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="tres colunas">
+            .tres.colunas
+          </div>
+          <div class="nove colunas">
+            .nove.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+          <div class="oito colunas">
+            .oito.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="cinco colunas">
+            .cinco.colunas
+          </div>
+          <div class="sete colunas">
+            .sete.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="seis colunas">
+            .seis.colunas
+          </div>
+          <div class="seis colunas">
+            .seis.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="sete colunas">
+            .sete.colunas
+          </div>
+          <div class="cinco colunas">
+            .cinco.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="oito colunas">
+            .oito.colunas
+          </div>
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="nove colunas">
+            .nove.colunas
+          </div>
+          <div class="tres colunas">
+            .tres.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="dez colunas">
+            .dez.colunas
+          </div>
+          <div class="duas colunas">
+            .duas.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="onze colunas">
+            .onze.colunas
+          </div>
+          <div class="uma coluna">
+            .uma
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="doze colunas">
+            .doze.colunas
+          </div>
+        </div>
+
+        <p><strong>Note:</strong> Com a finalidade de contornar comportamentos diferentes entre Linhas e 'arredondamento' a coluna sempre irá ser alinhar à <strong>esquerda</strong>. Se a sua Linha não tem uma contagem que chegue até 12 Colunas, você pode marcar a última Coluna com a <code>class="fim"</code>, a fim de substituir esse comportamento.</p>
+
+        <div class="linha display">
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="quatro colunas">
+            .quatro.colunas
+          </div>
+          <div class="quatro colunas fim">
+            .quatro.colunas.fim
+          </div>
+        </div>
+
+
+        <hr />
+        <h4>Deslocar</h4>
+        <p>Deslocamentos permitem que você crie espaço adicional entre as Colunas em uma Linha. Os deslocamentos executado a partir de <code>.deslocar-uma</code> até <code>.deslocar-onze</code>. </p>
+
+        <div class="linha display">
+          <div class="uma colunas">
+            .uma
+          </div>
+          <div class="onze colunas">
+            .onze.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="uma colunas">
+            .uma
+          </div>
+          <div class="dez colunas deslocar-uma">
+            .dez.colunas.deslocar-uma
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="uma colunas">
+            .uma
+          </div>
+          <div class="nove colunas deslocar-duas">
+            .nove.colunas.deslocar-duas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="uma colunas">
+            .uma
+          </div>
+          <div class="oito colunas deslocar-tres">
+            .oito.colunas.deslocar-tres
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="sete colunas deslocar-cinco">
+            .sete.colunas.deslocar-cinco
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="seis colunas deslocar-seis">
+            .seis.colunas.deslocar-seis
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="cinco colunas deslocar-sete">
+            .cinco.colunas.deslocar-sete
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="quatro colunas deslocar-oito">
+            .quatro.colunas.deslocar-oito
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="tres colunas">
+            .tres.colunas
+          </div>
+          <div class="tres colunas deslocar-seis">
+            .tres.colunas.deslocar-seis
+          </div>
+        </div>
+
+        <hr />
+        <h4>Colunas Centralizadas</h4>
+        <p>Colunas centralizadas são colocados no meio da Linha. Esta é uma maneira conveniente para certificar-se que um bloco está centralizado, mesmo se você alterar o número de Colunas. Nota: Não pode haver quaisquer outros blocos na Coluna para que isso funcione.</p>
+
+        <div class="linha display">
+          <div class="uma coluna centralizada">
+            .uma.coluna.centralizada
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="duas colunas centralizadas">
+            .duas.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="tres colunas centralizadas">
+            .tres.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="quatro colunas centralizadas">
+            .quatro.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="cinco colunas centralizadas">
+            .cinco.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="seis colunas centralizadas">
+            .seis.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="sete colunas centralizadas">
+            .sete.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="oito colunas centralizadas">
+            .oito.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="nove colunas centralizadas">
+            .nove.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="dez colunas centralizadas">
+            .dez.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="onze colunas centralizadas">
+            .onze.colunas.centralizadas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="doze colunas centralizadas">
+            .doze.colunas.centralizadas
+          </div>
+        </div>
+
+        <hr />
+
+        <h4>Empurrar/Puxar Colunas</h4>
+        <p>Às vezes dentro da grade que você deseja inverter a ordem das colunas e para isso você pode usar as classe <code>.empurrar-[numero]</code> e <code>.puxar-[numero]</code>. Você pode mudar as Colunas de desktops para tablet por exemplo.</p>
+
+        <div class="linha display">
+          <div class="duas colunas empurrar-dez">
+            .duas.colunas
+          </div>
+          <div class="dez colunas puxar-duas">
+            .dez.colunas 
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="tres colunas empurrar-nove">
+            .tres.colunas.empurrar-nove
+          </div>
+          <div class="nove colunas puxar-tres">
+            .nove.colunas.puxar-tres
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="quatro colunas empurrar-oito">
+            .quatro.colunas
+          </div>
+          <div class="oito colunas puxar-quatro">
+            .oito.colunas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="cinco colunas empurrar-sete">
+            .cinco.colunas
+          </div>
+          <div class="sete colunas puxar-cinco">
+            .sete.colunas 
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="seis colunas empurrar-seis">
+            .seis.colunas
+          </div>
+          <div class="seis colunas puxar-seis">
+            .seis.colunas 
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="sete colunas empurrar-cinco">
+            .sete.colunas
+          </div>
+          <div class="cinco colunas puxar-sete">
+            .cinco.colunas 
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="oito colunas empurrar-quatro">
+            .oito.colunas
+          </div>
+          <div class="quatro colunas puxar-oito">
+            .quatro.colunas 
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="nove colunas empurrar-tres">
+            .nove.colunas
+          </div>
+          <div class="tres colunas puxar-nove">
+            .tres.colunas 
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="dez colunas empurrar-duas">
+            .dez.colunas
+          </div>
+          <div class="duas colunas puxar-dez">
+            .duas.colunas 
+          </div>
+        </div>
+
+        <p>A sintaxe suporta para empurrar e puxar de três colunas e nove colunas.</p>
+
+<pre class="pre">
+&lt;div class="<span class="vermelho">linha</span>"&gt;
+  &lt;div class="<span class="vermelho">tres colunas empurrar-nove</span>"&gt;
+    <span class="preto">Sidebar...</span>
+  &lt;/div&gt;
+  &lt;div class="<span class="vermelho">nove colunas puxar-tres</span>"&gt;
+    <span class="preto">Conteudo principal...</span>
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+        <hr />
+
+        <h4>Mobile Grid (4 colunas)</h4>
+        <p>Quando você está criando o layout que você pode, opcionalmente, anexar classes para adaptar seu layout para Mobile. O Mobile grid é de quatro colunas.</p>
+
+        <div class="linha display">
+          <div class="quatro colunas mobile-uma">
+            .quatro.colunas.mobile-uma
+          </div>
+          <div class="oito colunas mobile-tres">
+            .oito.colunas.mobile-tres
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="seis colunas mobile-duas">
+            .seis.colunas.mobile-duas
+          </div>
+          <div class="seis colunas mobile-duas">
+            .seis.colunas.mobile-duas
+          </div>
+        </div>
+        <div class="linha display">
+          <div class="nove colunas mobile-tres">
+            .nove.colunas.mobile-tres
+          </div>
+          <div class="tres colunas mobile-uma">
+            .tres.colunas.mobile-uma
+          </div>
+        </div>
+
+<pre class="pre">
+&lt;div class="<span class="vermelho">linha</span>"&gt;
+  &lt;div class="<span class="vermelho">quatro colunas mobile-uma</span>"&gt;
+    <span class="preto">Sidebar...</span>
+  &lt;/div&gt;
+  &lt;div class="<span class="vermelho">oito colunas mobile-tres</span>"&gt;
+    <span class="preto">Conteudo principal...</span>
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+        <h5>Empurrar/Puxar Colunas Mobile</h5>
+        <p>Você pode usar as classes de <code>.puxar-uma-mobile</code>, <code>.puxar-duas-mobile</code>, <code>.puxar-tres-mobile</code>, bem como as <code>.empurrar-uma-mobile</code>, <code>.empurrar-duas-mobile</code>, <code>.empurrar-tres-mobile</code> para as quatro colunas mobile.</p>
+
+        <hr />
+
+        <h4>Block Grids</h4>
+        <p>Block grids são <code>ul</code> com as classes <code>.duas-col</code>, <code>.tres-col</code>, <code>.quatro-col</code> and <code>.cinco-col</code>. Desta forma você pode bloquear as colunas em um número fixo.</p>
+        <p>Essas colunas ficarão bloqueadas independente da visualização (mobile ou tablet).</p>
+
+        <h5>.duas-col</h5>
+        <ul class="block-grid duas-col">
+          <li>duas-col </li>
+          <li>duas-col </li>
+          <li>duas-col </li>
+          <li>duas-col </li>
+          <li>duas-col </li>
+        </ul>
+
+        <h5>.tres-col</h5>
+        <ul class="block-grid tres-col">
+          <li>tres-col </li>
+          <li>tres-col </li>
+          <li>tres-col </li>
+          <li>tres-col </li>
+          <li>tres-col </li>
+        </ul>
+
+        <h5>.quatro-col (Mobile)</h5>
+        <ul class="block-grid mobile quatro-col">
+          <li>quatro-col </li>
+          <li>quatro-col </li>
+          <li>quatro-col </li>
+          <li>quatro-col </li>
+          <li>quatro-col </li>
+          <li>quatro-col </li>
+        </ul>
+
+        <h5>.cinco-col</h5>
+        <ul class="block-grid cinco-col">
+          <li>cinco-col </li>
+          <li>cinco-col </li>
+          <li>cinco-col </li>
+          <li>cinco-col </li>
+          <li>cinco-col </li>
+          <li>cinco-col </li>
+          <li>cinco-col </li>
+        </ul>
+        <hr />
+        
+        <div class="linha">
+          <div class="doze colunas">
+            <h3>Tipografia</h3>
+            <p>Títulos, parágrafos, listas, e outros elementos do tipo "em linha"</p>
+            <hr />
+          </div>
+          <div class="quatro colunas">
+            <h1>h1. Heading 1</h1>
+            <h2>h2. Heading 2</h2>
+            <h3>h3. Heading 3</h3>
+            <h4>h4. Heading 4</h4>
+            <h5>h5. Heading 5</h5>
+            <h6>H6. HEADING 6</h6>
+          </div>
+          <div class="cinco colunas">
+            <p><code>&lt;p&gt;</code> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+            <p class="texto-centro"> <code>&lt;p class="texto-centro"&gt;</code> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+            <p class="texto-direita"> <code>&lt;p class="texto-direita"&gt;</code> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+          </div>
+          <div class="tres colunas">
+            <h4>Outros elementos</h4>
+            <p><em>Texto com a tag em</em></p>
+            <p><strong>Texto com a tag strong</strong></p>
+            <p>Texto com a tag <code>code</code></p>
+          </div>
+          
+          <div class="doze colunas">
+            <hr>
+            <h3>Listas</h3>
+          </div>
+          <div class="tres colunas">
+            <p><code>&lt;ul&gt;</code></p>
+            <ul>
+              <li>Lorem ipsum dolor </li>
+              <li>Consectetur adipiscing</li>
+              <li>Integer molestie lorem</li>
+              <li>Facilisis in pretium </li>
+              <li>Nulla volutpat aliquam
+                <ul>
+                  <li>Phasellus iaculis</li>
+                  <li>Purus sodales </li>
+                  <li>Vestibulum laoreet </li>
+                  <li>Ac tristique libero</li>
+                </ul>
+              </li>
+              <li>Faucibus porta lacus </li>
+              <li>Aenean sit amet erat nunc</li>
+              <li>Eget porttitor lorem</li>
+            </ul>
+          </div>
+          <div class="tres colunas">
+            <p><code>&lt;ul class="disc"&gt;</code></p>
+            <ul class="disc">
+              <li>Lorem ipsum dolor </li>
+              <li>Consectetur adipiscing</li>
+              <li>Integer molestie lorem</li>
+              <li>Facilisis in pretium </li>
+              <li>Nulla volutpat aliquam
+                <ul>
+                  <li>Phasellus iaculis</li>
+                  <li>Purus sodales </li>
+                  <li>Vestibulum laoreet </li>
+                  <li>Ac tristique libero</li>
+                </ul>
+              </li>
+              <li>Faucibus porta lacus </li>
+              <li>Aenean sit amet erat nunc</li>
+              <li>Eget porttitor lorem</li>
+            </ul>
+          </div>
+          <div class="tres colunas">
+            <p><code>&lt;ul class="square"&gt;</code></p>
+            <ul class="square">
+              <li>Lorem ipsum dolor </li>
+              <li>Consectetur adipiscing</li>
+              <li>Integer molestie lorem</li>
+              <li>Facilisis in pretium </li>
+              <li>Nulla volutpat aliquam
+                <ul>
+                  <li>Phasellus iaculis</li>
+                  <li>Purus sodales </li>
+                  <li>Vestibulum laoreet </li>
+                  <li>Ac tristique libero</li>
+                </ul>
+              </li>
+              <li>Faucibus porta lacus </li>
+              <li>Aenean sit amet erat nunc</li>
+              <li>Eget porttitor lorem</li>
+            </ul>
+          </div>
+          <div class="tres colunas">
+            <p><code>&lt;ul class="circle"&gt;</code></p>
+            <ul class="circle">
+              <li>Lorem ipsum dolor </li>
+              <li>Consectetur adipiscing</li>
+              <li>Integer molestie lorem</li>
+              <li>Facilisis in pretium </li>
+              <li>Nulla volutpat aliquam
+                <ul>
+                  <li>Phasellus iaculis</li>
+                  <li>Purus sodales </li>
+                  <li>Vestibulum laoreet </li>
+                  <li>Ac tristique libero</li>
+                </ul>
+              </li>
+              <li>Faucibus porta lacus </li>
+              <li>Aenean sit amet erat nunc</li>
+              <li>Eget porttitor lorem</li>
+            </ul>
+          </div>
+          
+          <div class="doze colunas">
+            <h3>Blockquotes</h3>
+            <p>Para incluir um blockquote, use a tag <code>&lt;blockquote&gt;</code>. Recomendamos usar a tag <code>&lt;p&gt;</code>. Caso deseje citar use a tag <code>&lt;cite&gt;</code></p>
+
+            <blockquote>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+              <cite>Citação "cite"</cite>  
+            </blockquote>
+          </div>
+          
+          <div class="doze colunas">
+            <h3>Imagens</h3>
+            <p>As imagens podem ser alinhadas à <code>.esquerda</code> ou a <code>.direita</code>. Este comportamento funciona apenas para imagens dentro da tag <code>&lt;p&gt;</code></p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <img src="http://placehold.it/200x100" alt="Imagem" title="img.esquerda" class="esquerda"> <img src="http://placehold.it/200x100" alt="Imagem" title="img.direita" class="direita"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <div class="linha">
+    <div class="doze colunas"><hr /></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="linha">
+    
+    <div class="sete colunas">
+      <p>Copyright © 2012 Editora Abril S.A. </p>
+    </div>
+    <div class="cinco colunas">
+      <ul class="lista-links direita">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Download</a></li>
+        <li><a href="#">Documentação</a></li>
+      </ul>
+    </div>
+    
+  </footer>
+  <!-- Javascripts -->
+  
 </body>
 </html>
