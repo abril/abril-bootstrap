@@ -12,7 +12,7 @@ Como usar
 Para usar basta incluir o estilo abaixo:
 
 ``` html
-<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/base.960.css" />
+<link rel="stylesheet" href="stylesheets/abril-bootstrap.css">
 ```
 
 
@@ -44,9 +44,9 @@ O que está incluso
 O Abril Bootstrap inclui uma completa estrutura HTML5, CSS3 e Media Queries para Tablets e Celulares.
 
 * jQuery JavaScript Library
-* Plugins Javascript (modernizr, selectivizr, css3-mediaqueries)
+* Plugins Javascript (chrome-frame, html5shiv, css3-mediaqueries)
 * Documentação de estilo completa
-* Três exemplos diferentes de base.css (960px, 990px, 1280px)
+* Responsive design (1020px, 780px, 640 fluid)
 
 
 Author
