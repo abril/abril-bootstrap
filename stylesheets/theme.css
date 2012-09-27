@@ -1,0 +1,12 @@
+body { 
+	background:#fff;
+	color:#666;
+	font:12px/18px sans-serif;
+}
+
+a { color:#555 }
+
+a:hover { 
+	color:#000; 
+	text-decoration:underline 
+}
