@@ -10,3 +10,9 @@ a:hover {
 	color:#000; 
 	text-decoration:underline 
 }
+
+
+pre,code {
+  font-family:monospace, serif;
+  font-size:1em
+}
