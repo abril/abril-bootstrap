@@ -1,8 +1,8 @@
 {
   "name": "abril-bootstrap",
-  "description": "---",
-  "author": "Front end developers Abril",
-  "version": "0.0.1",
+  "description": "Copyright 2012 Editora Abril",
+  "author": "@luiscameroon",
+  "version": "0.2.0",
   "dependencies": {
     "grunt-contrib-mincss": "*"
   },
