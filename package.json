@@ -1,0 +1,10 @@
+{
+  "name": "abril-bootstrap",
+  "description": "---",
+  "author": "Front end developers Abril",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt-consolidate-css": "*"
+  },
+  "engine": "node 0.8.1"
+}
