@@ -1,3 +1,4 @@
+fieldset, label {margin: 0; border: 0; padding: 0}
 /* For Documentation */
 
 /* Topo barra */
@@ -17,15 +18,50 @@
 .linha.display { background: #f4f4f4; margin-bottom: 10px; }
 .linha.display .coluna, 
 .linha.display .colunas, 
-.block-grid li { background: #e7e7e7; border: 1px solid #ddd; font-size: 12px; text-indent: 3px; padding-top: 6px; padding-bottom: 6px; }
-
-.typography h1, 
-.typography h2, 
-.typography h3, 
-.typography h4, 
-.typography h5 { font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif; }
+.block-grid li { background: #e7e7e7; border: 1px solid #ddd; font-size: 12px; padding-top: 6px; padding-bottom: 6px; }
 
 .logo-browsers{ margin-bottom: 13px }
 .pre{ background: #f7f7f9; color: navy; border: 1px solid #e1e1e8; padding: 5px; line-height: 1.3; }
 .vermelho { color: #d14; }
+.verde { color: #060; }
 .preto { color: #000; }
+
+.form legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.form .label {
+  padding: 5px 15px 0 0;
+  text-align: right;
+}
+
+/* Tablet Grid */
+@media (min-width: 768px) and (max-width: 1000px) {
+  .subtitulo { font-size: 1.4em }
+}
+
+
+/* Mobile Grid */
+@media only screen and (max-width: 767px) {
+  h1 { font-size: 34px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 23px; }
+  h4 { font-size: 19px; }
+  h5 { font-size: 16px; }
+  h6 { font-size: 14px; }
+  .topo-barra .logo { text-align: center }
+  .topo-barra .lista-links li { border-top: 1px solid #555 }
+  .lista-links { float: left; width: 100%; }
+  .lista-links li { width: 100%; border-top: 1px solid #ddd }
+  .lista-links li:first-child { border-top: 0 }
+  .lista-links a { text-align: center; display: block }
+}
+

@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     mincss: {
       compress: {
         files: {
-          "stylesheets/bootstrap.css": ["stylesheets/normalize.css", "stylesheets/reset.css", "stylesheets/base.css"]
+          "stylesheets/bootstrap.css": ["stylesheets/normalize.css", "stylesheets/reset.css", "stylesheets/base.css", "stylesheets/grid.css", "stylesheets/list.css", "stylesheets/table.css", "stylesheets/form.css", "stylesheets/responsive.css"]
         }
       }
     },
