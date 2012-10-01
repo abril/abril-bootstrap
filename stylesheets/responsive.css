@@ -1,0 +1,190 @@
+/* *********** RESPONSIVE *********** */
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 980px) {
+  .linha, .row {
+    width: 740px;
+    max-width: 100%;
+    min-width: 720px;
+    margin: 0 auto;
+  }
+  .linha .tablet-uma, .row .tablet-one {
+    width: 16.667% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .tablet-uma:last-child, .row .tablet-one:last-child { float: right; }
+  .linha.mosaico .tablet-uma, .row.mosaic .tablet-one { padding: 0; }
+  .linha .tablet-duas, .row .tablet-two {
+    width: 33.333% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .tablet-duas:last-child, .row .tablet-two:last-child { float: right; }
+  .linha.mosaico .tablet-duas, .row.mosaic .tablet-two { padding: 0; }
+  .linha .tablet-tres, .row .tablet-three {
+    width: 50% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .tablet-tres:last-child, .row .tablet-three:last-child { float: right; }
+  .linha.mosaico .tablet-tres, .row.mosaic .tablet-three { padding: 0; }
+  .linha .tablet-quatro, .row .tablet-four {
+    width: 66.666% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .tablet-quatro:last-child, .row .tablet-four:last-child { float: right; }
+  .linha.mosaico .tablet-quatro, .row.mosaic .tablet-four { padding: 0; }
+  .linha .tablet-cinco, .row .tablet-five {
+    width: 83.333% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .tablet-cinco:last-child, .row .tablet-five:last-child { float: right; }
+  .linha.mosaico .tablet-cinco, .row.mosaic .tablet-five { padding: 0; }
+  .linha .tablet-seis, .row .tablet-six {
+    width: 100% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .tablet-seis:last-child, .row .tablet-six:last-child { float: right; }
+  .linha.mosaico .tablet-seis, .row.mosaic .tablet-six { padding: 0; }
+  .push-one-tablet { left: 25%; }
+  .pull-one-tablet { right: 25%; }
+  .push-two-tablet { left: 50%; }
+  .pull-two-tablet { right: 50%; }
+  .push-three-tablet { left: 75%; }
+  .pull-three-tablet { right: 75%; }
+  .hide-on-tablet, .hide-tablet { display: none !important; }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 767px) { 
+  body {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .linha, .row {
+    width: auto;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .coluna, .col,
+  .colunas {
+    width: auto !important;
+    float: none;
+  }
+  .coluna:last-child, .col:last-child,
+  .colunas:last-child, .col:last-child { float: none; }
+  [class*="coluna"] + [class*="coluna"]:last-child { float: none; }
+  .coluna:before, .colunas:before, .col:before,
+  .coluna:after,  .colunas:after, .col:after {
+    content: "";
+    display: table;
+  }
+  .coluna:after, .col:after,
+  .colunas:after { clear: both; }
+  .deslocar-uma, .offset-one,
+  .deslocar-duas, .offset-two,
+  .deslocar-tres, .offset-three,
+  .deslocar-quatro, .offset-four,
+  .deslocar-cinco, .offset-five,
+  .deslocar-seis, .offset-six,
+  .deslocar-sete, .offset-seven,
+  .deslocar-oito, .offset-eight,
+  .deslocar-nove, .offset-nine,
+  .deslocar-dez .offset-ten { margin-left: 0 !important; }
+  .empurrar-duas, .push-two,
+  .empurrar-tres, .push-three,
+  .empurrar-quatro, .push-four,
+  .empurrar-cinco, .push-five,
+  .empurrar-seis, .push-six,
+  .empurrar-sete, .push-seven,
+  .empurrar-oito, .push-eight,
+  .empurrar-nove, .push-nine,
+  .empurrar-dez,  .push-ten { left: auto; }
+  .puxar-duas, .pull-two,
+  .puxar-tres, .pull-three,
+  .puxar-quatro, .pull-four,
+  .puxar-cinco, .pull-five,
+  .puxar-seis, .pull-six,
+  .puxar-sete, .pull-seven,
+  .puxar-oito, .pull-eight,
+  .puxar-nove, .pull-nine,
+  .puxar-dez, .pull-ten { right: auto; }
+  /* Grid Mobile 4-colunas */
+  .linha .mobile-uma, .row .mobile-one {
+    width: 25% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .mobile-uma:last-child, .row .mobile-one:last-child { float: right; }
+  .linha.mosaico .mobile-uma, .row.mosaic .mobile-one { padding: 0; }
+  .linha .mobile-duas, .row .mobile-two {
+    width: 50% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .mobile-duas:last-child, .row .mobile-two:last-child { float: right; }
+  .linha.mosaico .mobile-duas, .row.mosaic .mobile-two { padding: 0; }
+  .linha .mobile-tres, .row .mobile-three {
+    width: 75% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .mobile-tres:last-child, .row .mobile-three:last-child { float: right; }
+  .linha.mosaico .mobile-tres, .row.mosaic .mobile-three { padding: 0; }
+  .linha .mobile-quatro, .row .mobile-four {
+    width: 100% !important;
+    float: left;
+    padding: 0 15px;
+  }
+  .linha .mobile-quatro:last-child, .row .mobile-four:last-child { float: right; }
+  .linha.mosaico .mobile-quatro, .row.mosaic .mobile-four { padding: 0; }
+  .push-one-mobile { left: 25%; }
+  .pull-one-mobile { right: 25%; }
+  .push-two-mobile { left: 50%; }
+  .pull-two-mobile { right: 50%; }
+  .push-three-mobile { left: 75%; }
+  .pull-three-mobile { right: 75%; }
+  .hide-on-mobile, .hide-mobile { display: none !important; }
+}
+
+/* Media Print ( para Impressão ) */
+@media print { 
+  * { 
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after { content: "";  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+  .hide-on-print,
+  .hide-print { display: none !important; }
+}
+
