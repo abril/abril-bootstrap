@@ -1,0 +1,34 @@
+/* Table */
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.tabela, .table {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.tabela th, .table th,
+.tabela td, .table td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.tabela th, .table th { font-weight: bold; }
+.tabela thead th, .table thead th { vertical-align: bottom; }
+.tabela caption + thead tr:first-child th,  .table caption + thead tr:first-child th,
+.tabela caption + thead tr:first-child td,  .table caption + thead tr:first-child td,
+.tabela colgroup + thead tr:first-child th, .table colgroup + thead tr:first-child th,
+.tabela colgroup + thead tr:first-child td, .table colgroup + thead tr:first-child td,
+.tabela thead:first-child tr:first-child th,.table thead:first-child tr:first-child th,
+.tabela thead:first-child tr:first-child td,.table thead:first-child tr:first-child td { border-top: 0; }
+.tabela tbody + tbody { border-top: 2px solid #ddd; }
+.table tbody + tbody { border-top: 2px solid #ddd; }
+.tabela.listrada tbody tr:nth-child(odd) td, .table.striped tbody tr:nth-child(odd) td,
+.tabela.listrada tbody tr:nth-child(odd) th, .table.striped tbody tr:nth-child(odd) th { background-color: #f9f9f9; }
+.tabela tbody tr:hover td, .table tbody tr:hover td,
+.tabela tbody tr:hover th, .table tbody tr:hover th { background-color: #f5f5f5; }
+
